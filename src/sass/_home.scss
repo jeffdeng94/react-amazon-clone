@@ -20,3 +20,18 @@
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   }
 }
+
+.back-to-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #37475A;
+  color: #fff;
+  border: none;
+  
+  &:hover {
+    background-color: #485769;
+  }
+}

@@ -60,6 +60,7 @@ export default function Home() {
                     unid={uniqid()}
         />
         </div>
+        <button className='btn btn-full back-to-top' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Back to top</button>
       </div>
     </div>
   )
