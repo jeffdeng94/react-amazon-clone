@@ -1,0 +1,110 @@
+//config
+$primaryDarkColor: #131921;
+$primaryBrightColor: #cd9042;
+$backgroundColor: rgb(234, 237, 237);
+$primaryBtnBorderColor: #fcd200;
+$primaryBtnBackgroundColor: #ffd814;
+// $primaryBtnBorderColor: #a88734 #9c7e31 #846a29;
+// $primaryBtnBackgroundColor: #f0c14b;
+
+//mixin transistion
+@mixin mainTransition {
+  transition: all 0.3s linear;
+}
+
+//cart bump effect
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+//add remove icon
+
+.addRemoveIcon {
+  height: 25px;
+  line-height: 25px;
+  width: 25px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  border: 1px solid $primaryBtnBorderColor;
+  border-radius: 50%;
+  background-color: $primaryBtnBackgroundColor;
+  @include mainTransition;
+
+  &:hover{
+    background: #ddb70dbe;
+    border-color: #f2c200;
+    @include mainTransition;
+  }
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+* {
+  margin: 0;
+  text-decoration: none;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: $backgroundColor;
+}
+
+//button
+.btn {
+  background-color: $primaryBtnBackgroundColor;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: $primaryBtnBorderColor;
+  color: #111;
+  border-radius: 20px;
+  padding: 5px 20px;
+  cursor: pointer;
+  @include mainTransition;
+
+  &:hover {
+    background: #ddb70dbe;
+    border-color: #f2c200;
+    @include mainTransition;
+  }
+
+  &-full {
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+
+    @include mainTransition;
+
+    &:hover {
+      background: #ddb70dbe;
+      border-color: #f2c200;
+      @include mainTransition;
+    }
+  }
+
+  &-register {
+    background-color: #eee;
+    border-color: darkgray;
+  }
+}

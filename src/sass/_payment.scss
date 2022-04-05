@@ -1,0 +1,65 @@
+.payment{
+
+  background-color: #fff;
+
+  &-container{
+
+    h1{
+      text-align: center;
+      padding: 10px;
+      font-weight: 400;
+      background-color: $backgroundColor;
+      border-bottom: 1px solid #eee;
+
+      a{
+        color: rgb(161, 43, 43);
+      }
+    }
+  }
+
+  &-section{
+    display: flex;
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+
+  &-title{
+    flex: 0.2;
+  }
+
+  &-delivery,&-items,&-details{
+    flex: 0.8;
+  }
+
+  &-delivery {
+    display: flex;
+    flex-direction: column;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+    }
+    & label{
+      margin-right: 5px;
+    }
+
+    & input {
+      max-width: 400px;
+      padding:5px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-details{
+
+    & h3 {
+      padding: 20px 0;
+    }
+
+    & form{
+      max-width: 500px;
+    }
+  }
+}
