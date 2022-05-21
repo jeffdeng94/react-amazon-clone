@@ -47,6 +47,6 @@ to know more about firebase authentication and firebase database.
 
 ## Challenges
 
-- The hard part of this project is to implement payment gateway. I did take times to figure out the relation between payment intent and client secret
+- The hard part of this project is to implement payment gateway, need to figure out the relation between payment intent and client secret
 
 - Achieving nice looking transition effect may be difficult in React, I used CSSTransition group to wrap the cart list, one thing that needs to make sure is to provide unique key for each item otherwise the transition effect would not work properly
