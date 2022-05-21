@@ -7,14 +7,17 @@ export const initialState = {
 export const getBasketTotal = basket =>
   basket?.reduce((prev, curr) => prev + curr.price * curr.amount, 0).toFixed(2)
 
-export const getBasketAmount = basket => basket?.reduce((prev, curr) => prev + curr.amount * 1, 0)
+export const getBasketAmount = basket =>
+  basket?.reduce((prev, curr) => prev + curr.amount * 1, 0)
 
 //Reducer
 export const myReducer = (state, action) => {
   switch (action.type) {
     case 'ADD': {
       //get product index
-      const existingProductIndex = state.basket.findIndex(product => product.id === action.item.id)
+      const existingProductIndex = state.basket.findIndex(
+        product => product.id === action.item.id,
+      )
       //get the product
       const existingProduct = state.basket[existingProductIndex]
 
@@ -23,7 +26,10 @@ export const myReducer = (state, action) => {
       //check if the product already in basket
       if (existingProduct) {
         //update amount
-        updatedProduct = { ...existingProduct, amount: existingProduct.amount + 1 }
+        updatedProduct = {
+          ...existingProduct,
+          amount: existingProduct.amount + 1,
+        }
         updatedBasket = [...state.basket]
         updatedBasket[existingProductIndex] = updatedProduct
       } else {
@@ -39,7 +45,9 @@ export const myReducer = (state, action) => {
 
     case 'MINUS': {
       //get existing product index
-      const existingProductIndex = state.basket.findIndex(product => product.id === action.id)
+      const existingProductIndex = state.basket.findIndex(
+        product => product.id === action.id,
+      )
       //get the product
       const existingProduct = state.basket[existingProductIndex]
 
@@ -56,14 +64,21 @@ export const myReducer = (state, action) => {
 
       if (existingProduct) {
         if (existingProduct.amount === 1) {
-          updatedBasket = state.basket.filter(product => product.id !== action.id)
+          updatedBasket = state.basket.filter(
+            product => product.id !== action.id,
+          )
         } else {
           //update amount
-          updatedProduct = { ...existingProduct, amount: existingProduct.amount - 1 }
+          updatedProduct = {
+            ...existingProduct,
+            amount: existingProduct.amount - 1,
+          }
           updatedBasket[existingProductIndex] = updatedProduct
         }
       } else {
-        console.warn(`Can not remove product (id: ${action.id}) as its not in basket!`)
+        console.warn(
+          `Can not remove product (id: ${action.id}) as its not in basket!`,
+        )
       }
 
       return {
@@ -78,7 +93,9 @@ export const myReducer = (state, action) => {
       if (index >= 0) {
         updatedBasket.splice(index, 1)
       } else {
-        console.warn(`Can not remove product (id: ${action.id}) as its not in basket!`)
+        console.warn(
+          `Can not remove product (id: ${action.id}) as its not in basket!`,
+        )
       }
       return {
         ...state,
